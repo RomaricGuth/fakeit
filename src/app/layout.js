@@ -1,5 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import Image from "next/image";
+import logo from "/public/assets/logo.png";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,7 +25,18 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <header className="p-6">
+          <nav className="container mx-auto flex justify-between items-center">
+            <Image src={logo} alt="Logo dropit" width={100} height={50} />
+            <div>
+              <a href="#features" className="px-4">Features</a>
+              <a href="#cta" className="px-4">Get Started</a>
+            </div>
+          </nav>
+        </header>
+        <main>
+          {children}
+        </main>
       </body>
     </html>
   );
