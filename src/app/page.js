@@ -1,83 +1,88 @@
 import Image from "next/image";
 import logo from "/public/assets/logo.png";
+import editor from "/public/assets/editor.png";
+import editor_2 from "/public/assets/editor_2.png";
+import email_dialog from "/public/assets/email_dialog.png";
 import Hero from "@/components/Hero";
-import ConfettiContainer from "@/components/ConfettiContainer";
 import { Button } from "@/components/ui/button";
+import AnimatedCircularProgressBar from "@/components/ui/animated-circular-progress-bar";
+import WorklowStep from "@/components/workflowStep";
+import LandingSection from "@/components/landingSection";
 
 export default function Home() {
   return (
     <div>
       <Hero /> 
 
-      <section className="flex gap-image justify-center">
-        <div className="flex flex-col">
-          <h2>1. Create a fake landing page</h2>
-          <p>Showcase your product, we add a fake checkout</p>
-          <Image src={logo} />
-        </div>
-
-        <div className="flex flex-col">
-          <h2>2. Get market analysis</h2>
-          <p>We give you your business potential based on the market observations</p>
-          <Image src={logo} />
-        </div>
-
-        <div className="flex flex-col">
-          <h2>3. Start building your community</h2>
-          <p>Connect with your potential custommers and build with them</p>
-          <Image src={logo} />
-        </div>
-      </section>
-
-      <section className="flex gap-image">
-        <div>
-          <h2>Only the market knows</h2>
-          <p className="mb-title">You can&apos;t know what will be the next billion dollar worth business. Let&apos;s just listen to the market.</p>
-          <ul className="mb-paragraph">
-            <li>lead generation analysis</li>
-            <li>conversion rate analysis</li>
-            <li>SEO insights</li>
-          </ul>
-          <Button>Buy dropit</Button>
-        </div>
-        <div className="flex flex-col gap-32">
-          <Image src={logo} />
+      <section className="flex flex-col items-center">
+        <h2 className="text-center mb-image">How It Works</h2>
+        <div className="flex flex-wrap justify-center gap-x-section gap-y-image">
+          <WorklowStep
+            img={editor}
+            alt="No code landing page editor"
+            title="1. Create a Fake Landing Page"
+            description="Showcase your product, we add a fake checkout."
+          />
+          <WorklowStep
+            header={(
+              <div className="flex items-center gap-image">
+                <AnimatedCircularProgressBar value={180} max={1000} gaugePrimaryColor={'green'} number={180} description="daily visitors" />
+                <AnimatedCircularProgressBar value={7} max={20} gaugePrimaryColor={'orange'} number="20%" description="conversion rate" />
+              </div>
+            )}
+            title="2. Get Market Analysis"
+            description="We analyze market potential and provide insights for success."
+          />
+          <WorklowStep
+            img={email_dialog}
+            alt="form with email address input"
+            title="3. Start Building Your Community"
+            description="Engage with potential customers and develop your idea together."
+          />
         </div>
       </section>
 
-      <section className="flex flex-row-reverse gap-image">
-        <div>
-          <h2>Simple editor to create your landing page</h2>
-          <p className="mb-title">Add texts, images and more to describe your service. We take care of the following :</p>
-          <ul className="mb-paragraph">
-            <li>fake checkout</li>
-            <li>analytics</li>
-            <li>SEO optimization</li>
-            <li>deployement</li>
-            <li>custom domain or provided domain</li>
-          </ul>
-          <Button>Try it out</Button>
-        </div>
-        <div className="flex flex-col gap-32">
-          <Image src={logo} />
-        </div>
-      </section>
+      <LandingSection
+        title="Simple Editor for Your Landing Page"
+        description="Describe your service with text, images, and more. We handle the rest:"
+        checks={[
+          "Fake checkout",
+          "Analytics",
+          "SEO optimization",
+          "Deployment",
+          "Custom or provided domain"
+        ]}
+        cta="Try it Out"
+        img={editor_2}
+        alt="No code Landing Page Editor with image and text"
+      />
 
+      <LandingSection
+        align="right"
+        title="Only the market knows"
+        description="You can’t predict the next billion-dollar idea. Let the market guide your path with real insights."
+        checks={[
+          "Lead generation analysis",
+          "Conversion rate analysis",
+          "SEO insights"
+        ]}
+        cta="Get started with dropit"
+        img={logo}
+        alt="Market Insights Icon"
+      />
 
-      <section className="flex gap-image">
-        <div>
-          <h2>Gather emails and feedback</h2>
-          <p className="mb-title">Offer a chance to take part in your adventure.</p>
-          <ul className="mb-paragraph">
-            <li>email</li>
-            <li>connection with newsletter services</li>
-          </ul>
-          <Button>Buy dropit</Button>
-        </div>
-        <div className="flex flex-col gap-32">
-          <Image src={logo} />
-        </div>
-      </section>
+      <LandingSection
+        title="Gather Emails and Feedback"
+        description="During fake checkout, invite your potential customers to join your journey and provide valuable feedback."
+        checks={[
+          "Email collection",
+          "Survey form integration",
+          "Data about your leads",
+        ]}
+        cta="Buy dropit"
+        img={logo}
+        alt="Email Collection Icon"
+      />
     </div>
   );
 }

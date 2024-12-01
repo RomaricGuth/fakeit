@@ -59,7 +59,10 @@ module.exports = {
 				'title': '1rem',
 				'paragraph': '2rem',
 				'image': '3rem',
-				'section': '8rem',
+				'section': '16rem',
+			},
+			listStyleImage: {
+				'check': 'url(/assets/check.svg)'
 			},
   	},
   },

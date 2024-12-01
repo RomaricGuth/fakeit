@@ -2,24 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -108,8 +90,12 @@ body {
     @apply leading-relaxed max-w-[500px] text-muted-foreground;
   }
 
+  section {
+    @apply max-w-[1200px] mx-auto px-4;
+  }
+
   section:not(:last-child) {
-    @apply mb-section max-w-[1200px] mx-auto px-4;
+    @apply mb-section
   }
 }
 
