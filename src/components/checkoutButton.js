@@ -37,6 +37,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form"
+import HoverRippleButton from "./hoverRippleButton"
 
 const formSchema = z.object({
   email: z.string()
@@ -64,7 +65,7 @@ export function CheckoutButton({children}) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button>{children}</Button>
+        <HoverRippleButton>{children}</HoverRippleButton>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>

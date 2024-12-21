@@ -20,7 +20,7 @@ export default function Home() {
           <WorklowStep
             img={editor}
             alt="No code landing page editor"
-            title="1. Create a Fake Landing Page"
+            title="1. Create fake landing page"
             description="Showcase your product, we add a fake checkout."
           />
           <WorklowStep
@@ -30,20 +30,20 @@ export default function Home() {
                 <AnimatedCircularProgressBar value={7} max={20} gaugePrimaryColor={'orange'} number="20%" description="conversion rate" />
               </div>
             )}
-            title="2. Get Market Analysis"
+            title="2. Get market analysis"
             description="We analyze market potential and provide insights for success."
           />
           <WorklowStep
             img={email_dialog}
             alt="form with email address input"
-            title="3. Start Building Your Community"
+            title="3. Start building your community"
             description="Engage with potential customers and develop your idea together."
           />
         </div>
       </section>
 
       <LandingSection
-        title="Simple Editor for Your Landing Page"
+        title="Simple editor for your landing page"
         description="Describe your service with text, images, and more. We handle the rest:"
         checks={[
           "Fake checkout",
@@ -54,7 +54,7 @@ export default function Home() {
         ]}
         cta="Try it Out"
         img={editor_2}
-        alt="No code Landing Page Editor with image and text"
+        alt="No code landing page editor with image and text"
       />
 
       <LandingSection
@@ -68,11 +68,11 @@ export default function Home() {
         ]}
         cta="Get started with dropit"
         img={logo}
-        alt="Market Insights Icon"
+        alt="Market insights icon"
       />
 
       <LandingSection
-        title="Gather Emails and Feedback"
+        title="Gather emails and feedback"
         description="During fake checkout, invite your potential customers to join your journey and provide valuable feedback."
         checks={[
           "Email collection",
@@ -81,7 +81,7 @@ export default function Home() {
         ]}
         cta="Buy dropit"
         img={logo}
-        alt="Email Collection Icon"
+        alt="Email collection icon"
       />
     </div>
   );
