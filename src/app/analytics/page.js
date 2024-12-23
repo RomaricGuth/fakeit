@@ -7,30 +7,41 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function Page() {
   return (
-    <div>
+    <div className="bg-white py-image">
       <section className="mt-image max-w-full px-8">
         <h2 className="text-2xl">Search engine</h2>
         <div className="flex gap-image">
-          <div><Image src={search_engine} alt="Graph of number of apparitions and clicks in search engines over time" /></div>
-          <div><Image src={search_engine_requests} alt="Table of search engine requests and associated positions" /></div>
+          <div><Image className="border rounded-lg" src={search_engine} alt="Graph of number of apparitions and clicks in search engines over time" /></div>
+          <div><Image className="border rounded-lg" src={search_engine_requests} alt="Table of search engine requests and associated positions" /></div>
         </div>
       </section>
 
       <section className="mt-image max-w-full px-8">
-        <h2 className="text-2xl">Analytics</h2>
+
         <div className="flex gap-image">
-          <div><Image src={users} alt="Graph of site users over time" /></div>
-          <Card className="flex items-center justify-center p-4">
-              <AnimatedCircularProgressBar value={180} max={1000} gaugePrimaryColor={'green'} number={180} description="daily visitors" />
-          </Card>
-          <Card className="flex items-center justify-center p-4">
-              <AnimatedCircularProgressBar value={7} max={20} gaugePrimaryColor={'orange'} number="20%" description="conversion rate" />
-          </Card>
+
+          <div className="flex-1">
+        <h2 className="text-2xl">Analytics</h2>
+        <div className="flex gap-4">
+          <div className="-m-3"><Image className="h-[101%]" src={users} alt="Graph of site users over time" /></div>
+          <div className="flex flex-col gap-4">
+            <Card className="flex items-center justify-center p-4">
+                <AnimatedCircularProgressBar value={887} max={1000} gaugePrimaryColor={'green'} number={887} description="daily visitors" />
+            </Card>
+            <Card className="flex items-center justify-center p-4">
+                <AnimatedCircularProgressBar value={1.8} max={10} gaugePrimaryColor={'orange'} number="1.8%" description="conversion rate" />
+            </Card>
+          </div>
+        </div>
         </div>
 
-        <p>
+        <div className="flex flex-col flex-1">
+        <h2 className="text-2xl">Insights</h2>
+        <div className="p-4 bg-accent text-accent-foreground rounded-lg text-lg border border-accent">
           Your idea is getting traction! Your site is among the top 10% most visited sites. However, your conversion rate is below average. People may expect a different product or service than what you are offering for your targetted keywords.
-        </p>
+        </div>
+        </div>
+        </div>
       </section>
     </div>
   );

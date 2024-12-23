@@ -98,7 +98,7 @@ export default function AnimatedCircularProgressBar({
         {number || currentPercent}
       </span>
     </div>
-    {description && <p className="text-center font-semibold text-lg">{description}</p>}
+    {description && <p className="text-center font-bold text-lg mt-4">{description}</p>}
     </div>
   );
 }

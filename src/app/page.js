@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import AnimatedCircularProgressBar from "@/components/ui/animated-circular-progress-bar";
 import WorklowStep from "@/components/workflowStep";
 import LandingSection from "@/components/landingSection";
+import analytics from "/public/assets/analytics.png";
 
 export default function Home() {
   return (
@@ -26,8 +27,8 @@ export default function Home() {
           <WorklowStep
             header={(
               <div className="flex items-center gap-image">
-                <AnimatedCircularProgressBar value={180} max={1000} gaugePrimaryColor={'green'} number={180} description="daily visitors" />
-                <AnimatedCircularProgressBar value={7} max={20} gaugePrimaryColor={'orange'} number="20%" description="conversion rate" />
+                <AnimatedCircularProgressBar value={180} max={1000} gaugePrimaryColor={'orange'} number={180} description="daily visitors" />
+                <AnimatedCircularProgressBar value={20} max={35} gaugePrimaryColor={'green'} number="20%" description="conversion rate" />
               </div>
             )}
             title="2. Analyze market potential"
@@ -52,7 +53,7 @@ export default function Home() {
           "Deployment",
           "Custom or provided domain"
         ]}
-        cta="Try it Out"
+        cta="Try it out"
         img={editor_2}
         alt="No code landing page editor with image and text"
       />
@@ -66,9 +67,9 @@ export default function Home() {
           "Conversion rate analysis",
           "SEO insights"
         ]}
-        cta="Get started with dropit"
-        img={logo}
-        alt="Market insights icon"
+        cta="Analytics dashboard preview"
+        img={analytics}
+        alt="Analytics dashboard"
       />
 
       <LandingSection
@@ -79,7 +80,7 @@ export default function Home() {
           "Survey form integration",
           "Data about your leads",
         ]}
-        cta="Buy dropit"
+        cta="Community dashboard preview"
         img={logo}
         alt="Email collection icon"
       />
