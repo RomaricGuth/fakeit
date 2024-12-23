@@ -99,11 +99,7 @@ eaf4f8 background white tinted with primary
   }
 
   section {
-    @apply max-w-[1200px] mx-auto px-4;
-  }
-
-  section:not(:last-child) {
-    @apply mb-section
+    @apply max-w-[1200px] mx-auto px-4 mt-section;
   }
 }
 

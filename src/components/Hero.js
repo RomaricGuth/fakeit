@@ -5,11 +5,11 @@ export default function Hero() {
   return (
     <section className="flex flex-col items-center mt-section">
       <h1 className="text-center max-w-[800px] mb-image">
-        Validate your business idea<br/>in 2 hours, not 2 years
+        Validate your business idea<br/>with market data in hours, not years
       </h1>
 
       <p className="text-center mb-paragraph">
-        Create fake landing pages, track traffic, build your community and gather feedback all in one place.
+        Create fake landing pages, track and analyze traffic, build your community and gather feedback all in one place.
       </p>
 
       <CheckoutButton>Get Started</CheckoutButton>

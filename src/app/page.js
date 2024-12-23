@@ -20,7 +20,7 @@ export default function Home() {
           <WorklowStep
             img={editor}
             alt="No code landing page editor"
-            title="1. Create fake landing page"
+            title="1. Build your fake landing page"
             description="Showcase your product, we add a fake checkout."
           />
           <WorklowStep
@@ -30,8 +30,8 @@ export default function Home() {
                 <AnimatedCircularProgressBar value={7} max={20} gaugePrimaryColor={'orange'} number="20%" description="conversion rate" />
               </div>
             )}
-            title="2. Get market analysis"
-            description="We analyze market potential and provide insights for success."
+            title="2. Analyze market potential"
+            description="Get real data and insights for success."
           />
           <WorklowStep
             img={email_dialog}

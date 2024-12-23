@@ -26,7 +26,6 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Toaster />
         <header className="p-6">
           <nav className="container mx-auto flex justify-between items-center">
             <Image src={logo} alt="Logo dropit" width={100} height={50} />
@@ -39,6 +38,7 @@ export default function RootLayout({ children }) {
         <main>
           {children}
         </main>
+        <Toaster />
       </body>
     </html>
   );
