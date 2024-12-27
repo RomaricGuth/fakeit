@@ -3,6 +3,9 @@ import "./globals.css";
 import Image from "next/image";
 import logo from "/public/assets/logo.png";
 import { Toaster } from "@/components/ui/sonner"
+import HoverRippleButton from "@/components/hoverRippleButton";
+import Link from "next/link";
+import Copyright from "@/components/copyright";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,17 +30,35 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <header className="p-6">
-          <nav className="container mx-auto flex justify-between items-center">
+          <nav className="flex justify-between items-center">
             <Image src={logo} alt="Logo dropit" width={100} height={50} />
-            <div>
-              <a href="#features" className="px-4">Features</a>
-              <a href="#cta" className="px-4">Get Started</a>
+            <div className="flex gap-paragraph items-center">
+              <Link href="#features">Features</Link>
+              <Link href="#pricing">Pricing</Link>
+              <HoverRippleButton className="rounded-none">Sign up</HoverRippleButton>
             </div>
           </nav>
         </header>
         <main>
           {children}
         </main>
+        <footer className="bg-white px-8 pt-8 w-full mt-16">
+          <div className="flex justify-around">
+            <div className="flex flex-col gap-title flex-2">
+              <Image src={logo} alt="Logo dropit" height={80} />
+              <p>Validate your business idea in 2 hours with market data</p>
+            </div>
+            <div>
+              <div className="text-lg font-bold mb-title">Legal</div>
+              <ul className="space-y-1">
+                <li><Link className="hover:underline" href="/legal/terms">Terms of service</Link></li>
+                <li><Link className="hover:underline" href="/legal/privacy">Privacy policy</Link></li>
+                <li><Link className="hover:underline" href="/legal/cookies">Cookie policy</Link></li>
+              </ul>
+            </div>
+          </div>
+          <Copyright />
+        </footer>
         <Toaster />
       </body>
     </html>

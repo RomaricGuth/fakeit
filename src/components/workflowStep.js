@@ -6,7 +6,7 @@ export default function WorklowStep({img, alt, title, description, header}) {
       <div className="flex items-center justify-center h-[300px]">
         {header || <Image src={img} alt={alt} />}
       </div>
-      <h3 className="mt-image">{title}</h3>
+      <h3 className="mt-title">{title}</h3>
       <p className="text-center">{description}</p>
     </div>
   )

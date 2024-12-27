@@ -9,6 +9,8 @@ import AnimatedCircularProgressBar from "@/components/ui/animated-circular-progr
 import WorklowStep from "@/components/workflowStep";
 import LandingSection from "@/components/landingSection";
 import analytics from "/public/assets/analytics.png";
+import community from "/public/assets/community.png";
+import Pricing from "@/components/pricing";
 
 export default function Home() {
   return (
@@ -16,8 +18,8 @@ export default function Home() {
       <Hero /> 
 
       <section className="flex flex-col items-center">
-        <h2 className="text-center mb-image">How It Works</h2>
-        <div className="flex flex-wrap justify-center gap-x-section gap-y-image">
+        <h2 className="text-center mb-image">How it works</h2>
+        <div className="flex flex-wrap justify-center gap-16">
           <WorklowStep
             img={editor}
             alt="No code landing page editor"
@@ -32,58 +34,64 @@ export default function Home() {
               </div>
             )}
             title="2. Analyze market potential"
-            description="Get real data and insights for success."
+            description="See if people connect to your site try to buy."
           />
           <WorklowStep
             img={email_dialog}
             alt="form with email address input"
             title="3. Start building your community"
-            description="Engage with potential customers and develop your idea together."
+            description="Invite your early customers to leave their email and develop your idea together."
           />
         </div>
       </section>
 
-      <LandingSection
-        title="Simple editor for your landing page"
-        description="Describe your service with text, images, and more. We handle the rest:"
-        checks={[
-          "Fake checkout",
-          "Analytics",
-          "SEO optimization",
-          "Deployment",
-          "Custom or provided domain"
-        ]}
-        cta="Try it out"
-        img={editor_2}
-        alt="No code landing page editor with image and text"
-      />
+      <div id="features">
+        <LandingSection
+          title="Simple editor for your landing page"
+          description="Describe your service with text, images, and more. We handle the rest:"
+          checks={[
+            "Fake checkout to collect emails and feedback",
+            "Search engine optimization",
+            "Deployment",
+            "Custom or free provided domain"
+          ]}
+          cta="Try it out"
+          img={editor_2}
+          alt="No code landing page editor with images and text"
+        />
 
-      <LandingSection
-        align="right"
-        title="Only the market knows"
-        description="You can’t predict the next billion-dollar idea. Let the market guide your path with real insights."
-        checks={[
-          "Lead generation analysis",
-          "Conversion rate analysis",
-          "SEO insights"
-        ]}
-        cta="Analytics dashboard preview"
-        img={analytics}
-        alt="Analytics dashboard"
-      />
+        <LandingSection
+          align="right"
+          title="Collect data and turn it into insights"
+          description="You can’t predict the next billion-dollar idea, only the market knows. Use real data to make decisions."
+          checks={[
+            "Search engines data",
+            "Customer behavior analysis",
+            "Business potential evaluation",
+          ]}
+          cta="Analytics dashboard preview"
+          img={analytics}
+          alt="Analytics dashboard with search results and business potential analysis"
+        />
 
-      <LandingSection
-        title="Gather emails and feedback"
-        description="During fake checkout, invite your potential customers to join your journey and provide valuable feedback."
-        checks={[
-          "Email collection",
-          "Survey form integration",
-          "Data about your leads",
-        ]}
-        cta="Community dashboard preview"
-        img={logo}
-        alt="Email collection icon"
-      />
+        <LandingSection
+          title="Gather emails and feedback"
+          description="During fake checkout, invite your potential customers to join your journey and provide valuable feedback."
+          checks={[
+            "Email collection",
+            "Survey forms",
+            "Integration with email marketing tools",
+          ]}
+          cta="Community dashboard preview"
+          img={community}
+          alt="Email list with action buttons to send survey and newsletter emails"
+        />
+      </div>
+
+      <section className="flex flex-col items-center" id="pricing">
+        <h2 className="text-center mb-12">Pricing</h2>
+        <Pricing />
+      </section>
     </div>
   );
 }

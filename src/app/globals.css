@@ -101,6 +101,10 @@ eaf4f8 background white tinted with primary
   section {
     @apply max-w-[1200px] mx-auto px-4 mt-section;
   }
+
+  body > section:last-child {
+    @apply mt-0;
+  }
 }
 
 html {
@@ -168,3 +172,14 @@ html {
     }
   }
 }
+
+/*
+.gradient-backdrop-blur {
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+  mask-repeat: no-repeat;
+  mask-size: 100%;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100%;
+}
+*/

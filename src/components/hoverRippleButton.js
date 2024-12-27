@@ -3,12 +3,28 @@ import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
 import { set } from "react-hook-form";
 import { Button } from "./ui/button";
+import { cva } from "class-variance-authority";
+
+const buttonVariants = cva(
+  "relative overflow-hidden",
+  {
+    variants: {
+      variant: {
+        default: "hover:bg-primary",
+        outline: "hover:bg-transparent",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+    },
+  }
+)
 
 const HoverRippleButton = React.forwardRef((
   {
     className,
     children,
-    onClick,
+    variant,
     ...props
   },
   ref,
@@ -55,23 +71,22 @@ const HoverRippleButton = React.forwardRef((
     (<Button
       onMouseEnter={growRipple}
       onMouseOut={shrinkRipple}
-      className={cn("relative overflow-hidden hover:bg-primary", className)}
+      className={cn(buttonVariants({variant, className}))}
+      variant={variant}
       ref={ref}
       {...props}>
       <div className="relative z-10 pointer-events-none">{children}</div>
-      <span className="pointer-events-none absolute inset-0">
-        {ripple && (
-          <span
-            className="absolute rounded-full opacity-50 transition-transform bg-accent"
-            style={{
-              width: `${ripple.size}px`,
-              height: `${ripple.size}px`,
-              top: `${ripple.y}px`,
-              left: `${ripple.x}px`,
-              transform: ripple.up ? "scale(1)" : "scale(0)",
-            }} />
-        )}
-      </span>
+      {ripple && (
+        <span
+          className={`pointer-events-none absolute rounded-full transition-transform ${variant === "outline" ? 'bg-primary' : 'bg-accent'}`}
+          style={{
+            width: `${ripple.size}px`,
+            height: `${ripple.size}px`,
+            top: `${ripple.y}px`,
+            left: `${ripple.x}px`,
+            transform: ripple.up ? "scale(1)" : "scale(0)",
+          }} />
+      )}
     </Button>)
   );
 });
