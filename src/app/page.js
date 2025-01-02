@@ -11,10 +11,11 @@ import LandingSection from "@/components/landingSection";
 import analytics from "/public/assets/analytics.png";
 import community from "/public/assets/community.png";
 import Pricing from "@/components/pricing";
+import '@/styles/home.css';
 
 export default function Home() {
   return (
-    <div>
+    <div className="landing">
       <Hero /> 
 
       <section className="flex flex-col items-center">

@@ -93,18 +93,6 @@ eaf4f8 background white tinted with primary
   h3 {
     @apply text-2xl font-semibold tracking-tight mb-title;
   }
-
-  p {
-    @apply leading-relaxed max-w-[500px] text-muted-foreground;
-  }
-
-  section {
-    @apply max-w-[1200px] mx-auto px-4 mt-section;
-  }
-
-  body > section:last-child {
-    @apply mt-0;
-  }
 }
 
 html {

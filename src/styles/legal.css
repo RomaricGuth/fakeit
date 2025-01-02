@@ -1,0 +1,5 @@
+.legal {
+  h2 {
+    @apply text-xl leading-none md:text-3xl font-extrabold tracking-tight mb-title;
+  }
+}

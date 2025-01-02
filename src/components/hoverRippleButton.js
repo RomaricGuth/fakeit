@@ -1,4 +1,4 @@
-"use client";;
+"use client";
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
 import { set } from "react-hook-form";
@@ -72,6 +72,7 @@ const HoverRippleButton = React.forwardRef((
       onMouseEnter={growRipple}
       onMouseOut={shrinkRipple}
       className={cn(buttonVariants({variant, className}))}
+      ctaLabel={children}
       variant={variant}
       ref={ref}
       {...props}>

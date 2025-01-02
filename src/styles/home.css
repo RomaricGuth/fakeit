@@ -1,0 +1,13 @@
+.landing {
+  p {
+    @apply leading-relaxed max-w-[500px] text-muted-foreground;
+  }
+
+  section {
+    @apply max-w-[1200px] mx-auto px-4 mt-section;
+  }
+
+  body > section:last-of-type {
+    @apply mt-0;
+  }
+}

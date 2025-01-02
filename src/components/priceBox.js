@@ -19,7 +19,7 @@ export default function PriceBox({ title, price, description, checks, cta = "Sig
         </CardContent>
       </div>
       <CardFooter className="flex justify-center">
-        <Button className="rounded">{cta}</Button>
+        <Button className="rounded" ctaLabel={title}>{cta}</Button>
       </CardFooter>
     </Card>
   );
