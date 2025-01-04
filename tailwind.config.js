@@ -64,6 +64,9 @@ module.exports = {
 			listStyleImage: {
 				'check': 'url(/assets/check.svg)'
 			},
+			screens: {
+				'xs': '400px',
+			},
   	},
   },
   plugins: [require("tailwindcss-animate")],

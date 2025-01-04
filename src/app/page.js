@@ -20,7 +20,7 @@ export default function Home() {
 
       <section className="flex flex-col items-center">
         <h2 className="text-center mb-image">How it works</h2>
-        <div className="flex flex-wrap justify-center gap-16">
+        <div className="flex flex-col flex-wrap lg:flex-row justify-center gap-16">
           <WorklowStep
             img={editor}
             alt="No code landing page editor"
@@ -29,7 +29,7 @@ export default function Home() {
           />
           <WorklowStep
             header={(
-              <div className="flex items-center gap-image">
+              <div className="flex flex-col xs:flex-row items-center gap-image">
                 <AnimatedCircularProgressBar value={180} max={1000} gaugePrimaryColor={'orange'} number={180} description="daily visitors" />
                 <AnimatedCircularProgressBar value={20} max={35} gaugePrimaryColor={'green'} number="20%" description="conversion rate" />
               </div>

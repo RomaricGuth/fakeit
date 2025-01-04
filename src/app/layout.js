@@ -36,11 +36,11 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >
         <header className="p-6">
-          <nav className="flex justify-between items-center">
+          <nav className="flex justify-between items-center flex-col sm:flex-row gap-4">
             <Link href="/"><Image src={logo} alt="Logo fakeit" width={100} height={50} /></Link>
             <div className="flex gap-paragraph items-center">
-              <Link href="/#features">Features</Link>
-              <Link href="/#pricing">Pricing</Link>
+              <Link className="hidden sm:inline" href="/#features">Features</Link>
+              <Link className="hidden sm:inline" href="/#pricing">Pricing</Link>
               <CheckoutButton className="rounded-none">Sign up</CheckoutButton>
             </div>
           </nav>
@@ -49,7 +49,11 @@ export default function RootLayout({ children }) {
           {children}
         </main>
         <footer className="bg-white p-8 w-full mt-16">
-          <div className="flex justify-between max-w-[1200px] gap-image mx-auto">
+          <div className="flex flex-col sm:flex-row-reverse justify-between max-w-[1200px] gap-image mx-auto">
+            <div className="w-[600px] max-w-full">
+              <div className="text-xl font-bold mb-title">Contact</div>
+              <ContactForm />
+            </div>
             <div className="flex flex-col gap-paragraph self-center">
               <div>
                 <div className="text-lg font-bold mb-title">Legal</div>
@@ -65,10 +69,6 @@ export default function RootLayout({ children }) {
                   <Copyright />
                 </p>
               </div>
-            </div>
-            <div className="w-[600px] max-w-full">
-              <div className="text-xl font-bold mb-title">Contact</div>
-              <ContactForm />
             </div>
           </div>
         </footer>
