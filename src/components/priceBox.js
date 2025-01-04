@@ -1,3 +1,4 @@
+import { CheckoutButton } from "./checkoutButton";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
 
@@ -19,7 +20,7 @@ export default function PriceBox({ title, price, description, checks, cta = "Sig
         </CardContent>
       </div>
       <CardFooter className="flex justify-center">
-        <Button className="rounded" ctaLabel={title}>{cta}</Button>
+        <CheckoutButton className="rounded" ctaLabel={title}>{cta}</CheckoutButton>
       </CardFooter>
     </Card>
   );

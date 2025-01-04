@@ -1,3 +1,3 @@
 export default function Copyright() {
-  return `Copyright © ${new Date().getFullYear()} Dropit. All rights reserved`;
+  return `Copyright © ${new Date().getFullYear()} Fakeit. All rights reserved`;
 }

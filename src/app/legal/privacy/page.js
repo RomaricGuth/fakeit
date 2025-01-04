@@ -49,7 +49,7 @@ export default function PrivacyPolicy() {
               <li>The right to access your personal data.</li>
               <li>The right to request correction or deletion of your data.</li>
           </ul>
-          <p>To exercise these rights, please contact us at <a href="mailto:contact@dropit.com">contact@dropit.com</a>.</p>
+          <p>To exercise these rights, please contact us at <a href="mailto:contact@fakeit.pro">contact@fakeit.pro</a>.</p>
         </div>
         <div>
           <h2>6. Data Security</h2>

@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DB_PRISMA_URL") // uses connection pooling
+}
+
+model subscribe {
+  email     String  @id
+  comment   String?
+  date      DateTime @default(now())
+}
+
+model contact {
+  id      Int    @id @default(autoincrement())
+  email   String
+  subject String
+  message String
+  date      DateTime @default(now())
+}

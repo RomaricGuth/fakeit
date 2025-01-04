@@ -9,6 +9,7 @@ import Copyright from "@/components/copyright";
 import Script from "next/script";
 import GoogleAnalyticsScript from "@/lib/analytics/googleAnalytics";
 import Head from "next/head";
+import { CheckoutButton } from "@/components/checkoutButton";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -35,11 +36,11 @@ export default function RootLayout({ children }) {
       >
         <header className="p-6">
           <nav className="flex justify-between items-center">
-            <Link href="/"><Image src={logo} alt="Logo dropit" width={100} height={50} /></Link>
+            <Link href="/"><Image src={logo} alt="Logo fakeit" width={100} height={50} /></Link>
             <div className="flex gap-paragraph items-center">
               <Link href="/#features">Features</Link>
               <Link href="/#pricing">Pricing</Link>
-              <HoverRippleButton className="rounded-none">Sign up</HoverRippleButton>
+              <CheckoutButton className="rounded-none">Sign up</CheckoutButton>
             </div>
           </nav>
         </header>
@@ -49,7 +50,7 @@ export default function RootLayout({ children }) {
         <footer className="bg-white p-8 w-full mt-16">
           <div className="flex justify-around">
             <div className="flex flex-col gap-title flex-2">
-              <Image src={logo} alt="Logo dropit" height={80} />
+              <Image src={logo} alt="Logo fakeit" height={80} />
               <p className="text-muted-foreground">
                 Validate your business idea in 2 hours with market data<br />
                 <Copyright />
