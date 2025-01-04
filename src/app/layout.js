@@ -10,6 +10,7 @@ import Script from "next/script";
 import GoogleAnalyticsScript from "@/lib/analytics/googleAnalytics";
 import Head from "next/head";
 import { CheckoutButton } from "@/components/checkoutButton";
+import ContactForm from "@/components/contactForm";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -48,20 +49,26 @@ export default function RootLayout({ children }) {
           {children}
         </main>
         <footer className="bg-white p-8 w-full mt-16">
-          <div className="flex justify-around">
-            <div className="flex flex-col gap-title flex-2">
-              <Image src={logo} alt="Logo fakeit" height={80} />
-              <p className="text-muted-foreground">
-                Validate your business idea in 2 hours with market data<br />
-                <Copyright />
-              </p>
+          <div className="flex justify-between max-w-[1200px] gap-image mx-auto">
+            <div className="flex flex-col gap-paragraph self-center">
+              <div>
+                <div className="text-lg font-bold mb-title">Legal</div>
+                <ul className="space-y-1">
+                  <li><Link className="hover:underline" href="/legal/privacy">Privacy policy</Link></li>
+                  <li><Link className="hover:underline" href="/legal/cookies">Cookie policy</Link></li>
+                </ul>
+              </div>
+              <div>
+                <Image src={logo} alt="Logo fakeit" height={80} />
+                <p className="text-muted-foreground mt-title">
+                  Validate your business idea in 2 hours with market data<br />
+                  <Copyright />
+                </p>
+              </div>
             </div>
-            <div>
-              <div className="text-lg font-bold mb-title">Legal</div>
-              <ul className="space-y-1">
-                <li><Link className="hover:underline" href="/legal/privacy">Privacy policy</Link></li>
-                <li><Link className="hover:underline" href="/legal/cookies">Cookie policy</Link></li>
-              </ul>
+            <div className="w-[600px] max-w-full">
+              <div className="text-xl font-bold mb-title">Contact</div>
+              <ContactForm />
             </div>
           </div>
         </footer>

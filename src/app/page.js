@@ -25,7 +25,7 @@ export default function Home() {
             img={editor}
             alt="No code landing page editor"
             title="1. Build your fake landing page"
-            description="Showcase your product, we add a fake checkout."
+            description="Showcase your product, we setup everything else."
           />
           <WorklowStep
             header={(
@@ -34,14 +34,14 @@ export default function Home() {
                 <AnimatedCircularProgressBar value={20} max={35} gaugePrimaryColor={'green'} number="20%" description="conversion rate" />
               </div>
             )}
-            title="2. Analyze market potential"
-            description="See if people connect to your site try to buy."
+            title="2. Analyze your product potential"
+            description="See if people connect to your site and try to buy."
           />
           <WorklowStep
             img={email_dialog}
             alt="form with email address input"
             title="3. Start building your community"
-            description="Invite your early customers to leave their email and develop your idea together."
+            description="Invite your early customers to leave their email and get to know them."
           />
         </div>
       </section>
@@ -77,7 +77,7 @@ export default function Home() {
 
         <LandingSection
           title="Gather emails and feedback"
-          description="During fake checkout, invite your potential customers to join your journey and provide valuable feedback."
+          description="When people try to buy your product, ask for their email to join your journey and provide valuable feedback."
           checks={[
             "Email collection",
             "Survey forms",
