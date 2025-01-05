@@ -1,26 +1,19 @@
-"use client";
-
-import { Button } from "@/components/ui/button";
+import CookieConsent from "@/components/cookieConsent";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { getConsent, setConsent } from "@/lib/analytics/googleAnalytics";
-import { useEffect, useState } from "react";
+
+export const metadata = {
+  title: "Cookie Policy - FakeIT",
+  description: "Cookie Policy for FakeIT, a tool to test your business ideas with market data.",
+};
 
 function CookiePolicy() {
-  const [gaConsent, setGaConsent] = useState(getConsent());
   const googleId = process.env.NEXT_PUBLIC_GA_ID.substring(2);
-
-  useEffect(() => {
-    setConsent(gaConsent);
-  }, [gaConsent]);
-
   return (
     <article className="p-8">
       <h1>Cookie Policy</h1>
       <div>
-        <p className="inline">
-        This website uses cookies to measure audience and improve user experience. Optional cookies for analytics are enabled by default, but you may opt out at any time.<br />
-        Optional cookies are currently <strong>{gaConsent ? 'enabled' : 'disabled'}</strong>.</p>
-        <Button variant="link" className="inline -ml-4" onClick={() => setGaConsent(!gaConsent)}>{gaConsent ? 'OPT OUT' : 'OPT IN'}</Button>
+        <p>This website uses cookies to measure audience and improve user experience. Optional cookies for analytics are enabled by default, but you may opt out at any time.</p>
+        <CookieConsent />
       </div>
 
       {/* <h2 className="mt-8">Essential Cookies</h2>

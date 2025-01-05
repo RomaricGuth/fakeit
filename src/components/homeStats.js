@@ -1,3 +1,5 @@
+import AnimatedCircularProgressBar from "./ui/animated-circular-progress-bar"
+
 export default function HomeStats() {
   const [values, setValues] = useState({
     dailyVisitors: 180,
@@ -10,3 +12,4 @@ export default function HomeStats() {
       <AnimatedCircularProgressBar value={20} max={35} gaugePrimaryColor={'green'} number="20%" description="conversion rate" />
     </div>
   )
+}

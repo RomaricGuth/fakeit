@@ -1,5 +1,10 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "Privacy Policy - FakeIT",
+  description: "FakeIT is a tool to validate your business idea in 2 hours with market data.",
+};
+
 export default function PrivacyPolicy() {
   return (
     <article className="p-8">

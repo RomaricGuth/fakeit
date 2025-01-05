@@ -11,6 +11,17 @@ import check from "/public/assets/check.svg";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
+export const metadata = {
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
+}
+
 export default function Page() {
 
   const data = [
@@ -97,7 +108,7 @@ export default function Page() {
               <TableRow key={index}>
                 <TableCell>{row.email}</TableCell>
                 <TableCell>{row.dateSubscribed}</TableCell>
-                <TableCell>{row.unsubscribed && <Image src={check}/>}</TableCell>
+                <TableCell>{row.unsubscribed && <Image src={check} alt="unsubcribed" />}</TableCell>
                 <TableCell>{row.comment}</TableCell>
               </TableRow>
             ))}

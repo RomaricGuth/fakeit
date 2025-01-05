@@ -5,6 +5,17 @@ import search_engine_requests from "/public/assets/gsc_requests.png";
 import users from "/public/assets/ga_users.png";
 import { Card, CardContent } from "@/components/ui/card";
 
+export const metadata = {
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
+}
+
 export default function Page() {
   return (
     <div className="bg-white py-image">

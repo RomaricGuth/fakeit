@@ -13,6 +13,11 @@ import community from "/public/assets/community.png";
 import Pricing from "@/components/pricing";
 import '@/styles/home.css';
 
+export const metadata = {
+  title: "FakeIT - Test your business ideas",
+  description: "Create fake landing pages, track and analyze traffic, collect emails and gather feedback.",
+};
+
 export default function Home() {
   return (
     <div className="landing">
