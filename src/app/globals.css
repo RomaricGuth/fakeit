@@ -18,7 +18,7 @@ eaf4f8 background white tinted with primary
 
 @layer base {
   :root {
-    --background: 197 50% 95%;
+    --background: 197 50% 97%;
     --foreground: 200, 65%, 5%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
