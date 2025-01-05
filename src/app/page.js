@@ -16,11 +16,12 @@ import '@/styles/home.css';
 export const metadata = {
   title: "FakeIT - Test your business ideas",
   description: "Create fake landing pages, track and analyze traffic, collect emails and gather feedback.",
+  canonical: `https://www.${process.env.NEXT_PUBLIC_HOSTNAME}`,
 };
 
 export default function Home() {
   return (
-    <div className="landing">
+    <article className="landing">
       <Hero /> 
 
       <section className="flex flex-col items-center">
@@ -98,6 +99,6 @@ export default function Home() {
         <h2 className="text-center mb-12">Pricing</h2>
         <Pricing />
       </section>
-    </div>
+    </article>
   );
 }

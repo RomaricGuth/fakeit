@@ -67,7 +67,7 @@ export default function PrivacyPolicy() {
         <div>
           <h2>8. Contact Us</h2>
           <p>If you have any questions about this Privacy Policy or how your data is handled, please contact us at:</p>
-          <p>Email: <a href="mailto:contact@dropit.com">contact@dropit.com</a></p>
+          <p>Email: <a href="mailto:contact@fakeit.pro">contact@fakeit.pro</a></p>
         </div>
       </div>
 

@@ -54,7 +54,7 @@ const GoogleAnalyticsScript = () => {
                       gtag('js', new Date());
                       gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
                         page_path: window.location.pathname,
-                        'anonymize_ip': true,
+                        anonymize_ip: true,
                         debug_mode: ${process.env.NODE_ENV === 'development'}
                       });
                     `,

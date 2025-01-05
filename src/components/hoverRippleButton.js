@@ -76,7 +76,7 @@ const HoverRippleButton = React.forwardRef((
       variant={variant}
       ref={ref}
       {...props}>
-      <div className="relative z-10 pointer-events-none">{children}</div>
+      <span className="relative z-10 pointer-events-none">{children}</span>
       {ripple && (
         <span
           className={`pointer-events-none absolute rounded-full transition-transform ${variant === "outline" ? 'bg-primary' : 'bg-accent'}`}
