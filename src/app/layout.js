@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <GoogleAnalyticsScript />
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen overflow-x-hidden`}
       >
         <header className="p-6">
           <nav className="flex justify-between items-center flex-col sm:flex-row gap-4">

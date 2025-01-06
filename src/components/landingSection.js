@@ -1,13 +1,46 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import Image from "next/image";
 import HoverRippleButton from "./hoverRippleButton";
 import { CheckoutButton } from "./checkoutButton";
+import { motion } from 'framer-motion';
+import { useEffect, useState } from "react";
 
 export default function LandingSection({className, title, description, checks, cta, img, alt, align = 'left'}) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+      const mediaQuery = window.matchMedia('(max-width: 1024px)');
+      setIsMobile(mediaQuery.matches);
+
+      const handleResize = () => setIsMobile(mediaQuery.matches);
+      mediaQuery.addEventListener('change', handleResize);
+
+      return () => mediaQuery.removeEventListener('change', handleResize);
+  }, []);
+
+  const x = isMobile ? 0 : (align === 'left' ? -300 : 300);
+  const y = isMobile ? 50 : 0;
+
   return (
     <section className={cn(`flex ${align === 'left' ? 'flex-row' : 'flex-row-reverse'} gap-image`, className)}>
-      <div className={`flex-[3] flex flex-col ${align === 'right' && ''}`}>
+      <motion.div
+        className={`flex-[3] flex flex-col ${align === 'right' && ''}`}
+        initial="hidden"
+        whileInView="visible"
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        viewport={{ once: isMobile }}
+        variants={{
+          hidden: { x, y, opacity: 0 },
+          visible: {
+            x: 0,
+            y: 0,
+            opacity: 1,
+          },
+        }}
+      >
         <h2>{title}</h2>
         <p className="mb-paragraph" style={{
           maxWidth: "100%",
@@ -25,8 +58,23 @@ export default function LandingSection({className, title, description, checks, c
             {cta && <CheckoutButton className="self-center" variant="outline">{cta}</CheckoutButton>}
           </div>
         </div>
-      </div>
-      <div className="flex-[4] justify-center items-center hidden lg:flex"><Image src={img} alt={alt} className="w-full max-h-full aspect-auto" /></div>
+      </motion.div>
+      <motion.div
+        className="flex-[4] justify-center items-center hidden lg:flex"
+        initial="hidden"
+        whileInView="visible"
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        variants={{
+          hidden: { x: -x, y, opacity: 0 },
+          visible: {
+            x: 0,
+            y: 0,
+            opacity: 1,
+          },
+        }}
+      >
+        <Image src={img} alt={alt} className="w-full max-h-full aspect-auto" />
+      </motion.div>
     </section>
   )
 }

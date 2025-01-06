@@ -1,8 +1,27 @@
+"use client"
+
 import PriceBox from "./priceBox";
+import { motion } from 'framer-motion';
 
 export default function Pricing() {
+  const containerVariants = {
+    hidden: { opacity: 1 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.3, // Delays between child animations
+        },
+    },
+  };
   return (
-    <div className="flex flex-wrap justify-center gap-2">
+    <motion.div
+      className="flex flex-wrap justify-center gap-2"
+      initial="hidden"
+      whileInView="visible"
+      delayChildren={1}
+      viewport={{ once: true }}
+      variants={containerVariants}
+    >
       <PriceBox
         title="Free"
         price="$0"
@@ -40,6 +59,6 @@ export default function Pricing() {
           "5 deployments",
         ]}
       />
-    </div>
+    </motion.div>
   )
 }
