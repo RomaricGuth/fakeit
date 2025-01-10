@@ -39,7 +39,7 @@ export default function HowItWorks() {
             img={editor}
             alt="No code landing page editor"
             title="1. Build your fake landing page"
-            description="Showcase your product, we setup everything else."
+            description="As if you'd like to sell your product or service"
           />
           <WorklowStep
             header={(
@@ -48,8 +48,8 @@ export default function HowItWorks() {
                 <AnimatedCircularProgressBar value={conversionRate} max={35} gaugePrimaryColor={'green'} number={`${conversionRate}%`} description="conversion rate" />
               </div>
             )}
-            title="2. Analyze your product potential"
-            description="See if people connect to your site and try to buy."
+            title="2. Analyze your idea's potential"
+            description="See if people connect to your site and try to buy"
           />
           <WorklowStep
             img={email_dialog}

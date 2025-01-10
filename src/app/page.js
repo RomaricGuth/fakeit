@@ -13,8 +13,6 @@ import '@/styles/home.css';
 import HowItWorks from "@/components/howItWorks";
 
 export const metadata = {
-  title: "FakeIT - Test your business ideas",
-  description: "Create fake landing pages, track and analyze traffic, collect emails and gather feedback.",
   canonical: `https://www.${process.env.NEXT_PUBLIC_HOSTNAME}`,
 };
 
@@ -33,10 +31,9 @@ export default function Home() {
           title="Simple editor for your landing page"
           description="Describe your service with text, images, and more. We handle the rest:"
           checks={[
-            "Fake checkout to collect emails and feedback",
-            "Search engine optimization",
             "Deployment",
-            "Custom or free provided domain"
+            "Custom or free provided domain",
+            "Search engine optimization",
           ]}
           cta="Try it out"
           img={editor_2}

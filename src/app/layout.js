@@ -20,9 +20,46 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+const title  = "Test your business idea | FakeIT";
+const description = "Create fake landing pages, track and analyze traffic, collect emails and gather feedback.";
+
 export const metadata = {
-  title: "FakeIT - Test your business ideas",
-  description: "Create fake landing pages, track and analyze traffic, collect emails and gather feedback.",
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    url: `https://www.${process.env.NEXT_PUBLIC_HOSTNAME}`, // Update to your domain
+    siteName: "FakeIT",
+    images: [
+      {
+        url: `https://www.${process.env.NEXT_PUBLIC_HOSTNAME}/assets/logo.png`, // Update to your domain
+        width: 1200,
+        height: 630,
+        alt: "Logo FakeIT",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [`https://www.${process.env.NEXT_PUBLIC_HOSTNAME}/assets/logo.png`],
+  },
+  alternates: {
+    canonical: `https://www.${process.env.NEXT_PUBLIC_HOSTNAME}`,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    noarchive: false,
+    "max-snippet": -1,
+    "max-image-preview": "large",
+    "max-video-preview": -1,
+  },
+  themeColor: "#288DBD", // Customize this to match your site's branding
 };
 
 export default function RootLayout({ children }) {

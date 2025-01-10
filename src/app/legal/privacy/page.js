@@ -3,6 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Privacy Policy - FakeIT",
   description: "This Privacy Policy explains how we collect, use, and protect your personal information when you visit our website or use our services.",
+  canonical: `https://www.${process.env.NEXT_PUBLIC_HOSTNAME}/legal/privacy`,
 };
 
 export default function PrivacyPolicy() {

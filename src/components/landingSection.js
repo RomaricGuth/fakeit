@@ -9,12 +9,10 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from "react";
 
 export default function LandingSection({className, title, description, checks, cta, img, alt, align = 'left'}) {
-  const [isMobile, setIsMobile] = useState(false);
+  const mediaQuery = window.matchMedia('(max-width: 1024px)');
+  const [isMobile, setIsMobile] = useState(mediaQuery.matches);
 
   useEffect(() => {
-      const mediaQuery = window.matchMedia('(max-width: 1024px)');
-      setIsMobile(mediaQuery.matches);
-
       const handleResize = () => setIsMobile(mediaQuery.matches);
       mediaQuery.addEventListener('change', handleResize);
 
@@ -27,7 +25,7 @@ export default function LandingSection({className, title, description, checks, c
   return (
     <section className={cn(`flex ${align === 'left' ? 'flex-row' : 'flex-row-reverse'} gap-image`, className)}>
       <motion.div
-        className={`flex-[3] flex flex-col ${align === 'right' && ''}`}
+        className={`flex-[3] flex flex-col`}
         initial="hidden"
         whileInView="visible"
         transition={{ duration: 0.5, ease: "easeOut" }}
@@ -49,9 +47,9 @@ export default function LandingSection({className, title, description, checks, c
           },
         }}>{description}</p>
 
-        <div className={`flex flex-col ${align === 'left' ? 'md:flex-row' : 'md:flex-row-reverse'} gap-image`}>
-          <div className="lg:hidden mx-auto max-w-[640px] md:order-2 md:w-[50%]"><Image src={img} alt={alt} className="aspect-auto" /></div>
-          <div className="flex flex-col md:self-center">
+        <div className={`flex flex-col ${align === 'left' ? 'md:flex-row' : 'md:flex-row-reverse'} lg:flex-col gap-image`}>
+          <div className="lg:hidden mx-auto max-w-[640px] md:order-2 md:w-[50%]"><Image src={img} alt={alt} className="aspect-auto rounded-xl" /></div>
+          <div className="flex flex-col md:self-center lg:self-start lg:w-full">
             <ul className="mb-paragraph list-image-check list-inside">
               {checks.map((check, i) => <li key={i}>{check}</li>)}
             </ul>
@@ -73,7 +71,7 @@ export default function LandingSection({className, title, description, checks, c
           },
         }}
       >
-        <Image src={img} alt={alt} className="w-full max-h-full aspect-auto" />
+        <Image src={img} alt={alt} className="w-full max-h-full aspect-auto rounded-xl" />
       </motion.div>
     </section>
   )

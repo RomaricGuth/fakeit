@@ -4,6 +4,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 export const metadata = {
   title: "Cookie Policy - FakeIT",
   description: "Cookie Policy for FakeIT, a tool to test your business ideas with market data.",
+  canonical: `https://www.${process.env.NEXT_PUBLIC_HOSTNAME}/legal/cookies`,
 };
 
 function CookiePolicy() {

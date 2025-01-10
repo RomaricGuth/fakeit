@@ -11,7 +11,7 @@ export default function PriceBox({ title, price, description, checks, cta = "Sig
         visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.5 } },
       }}  
     >
-      <Card className="w-[260px] max-w-full min-h-[420px] flex flex-col justify-between gap-paragraph" asChild>
+      <Card className="w-[260px] max-w-full h-full min-h-[420px] flex flex-col justify-between gap-paragraph" asChild>
         <div>
           <CardHeader>
             <CardTitle className="text-gray-600">{title}</CardTitle>
