@@ -59,7 +59,6 @@ export const metadata = {
     "max-image-preview": "large",
     "max-video-preview": -1,
   },
-  themeColor: "#288DBD", // Customize this to match your site's branding
 };
 
 export default function RootLayout({ children }) {
