@@ -9,10 +9,12 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from "react";
 
 export default function LandingSection({className, title, description, checks, cta, img, alt, align = 'left'}) {
-  const mediaQuery = window.matchMedia('(max-width: 1024px)');
-  const [isMobile, setIsMobile] = useState(mediaQuery.matches);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+      const mediaQuery = window.matchMedia('(max-width: 1024px)');
+      setIsMobile(mediaQuery.matches);
+
       const handleResize = () => setIsMobile(mediaQuery.matches);
       mediaQuery.addEventListener('change', handleResize);
 
